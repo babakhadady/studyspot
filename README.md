@@ -1,14 +1,6 @@
 # StudySpot
 ## A web application to search for study locations around UBC campus with live crowd-sourced seat availibility, ratings, and reviews.
  
-## Developed by:
-- Babak H (babakhadady)
-- Noel I (nilling4)
-- Henry K (henrykim12)
-- Andy L (ndlee221)
-- David M (DavidMurgulet)
-
-Note: commit records are not representitive of contributions from above members, as laptops were shared and code sent to each other before being committed to reduce merges. 
 
 ## How to run:
 From frontend/src, enter in terminal "npm start". If any errors, enter "npm install" first, then "npm start" again.
