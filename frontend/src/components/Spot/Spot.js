@@ -28,7 +28,7 @@ const months = {
     Oct: '10',
     Nov: '11',
     Dec: '12',
-  }
+}
 
 function Spot({ setHome, input, setInput }) {
     const [building, setBuilding] = useState(false);
@@ -47,12 +47,18 @@ function Spot({ setHome, input, setInput }) {
     }, [input]);
 
     useEffect(() => {
-        if (rating) sendReview();
+        if (rating) {
+            sendReview();
+            getTime()
+        }
 
     }, [review])
 
     useEffect(() => {
-        if (capacity != 0) sendCapacity();
+        if (capacity != 0) {
+            sendCapacity();
+            getTime();
+        }
     }, [capacity]);
 
 
@@ -62,6 +68,13 @@ function Spot({ setHome, input, setInput }) {
 
 
     useEffect(() => {
+
+
+
+    }, []);
+
+
+    function getTime() {
         let currentDateTime = Date().toLocaleString()
         let year = "";
         time = currentDateTime.slice(currentDateTime.search(":") - 2);
@@ -76,16 +89,14 @@ function Spot({ setHome, input, setInput }) {
         date = date.slice(0, date.search(" "));
         year = year.slice(2, year.search(" "));
 
-        datestring = months[month]+ "-"+ date + "-" + year
+        datestring = date + "-" + months[month] + "-" + year
 
 
         console.log(datestring);
         console.log(date);
         console.log(month);
         console.log(time);
-
-
-    }, []);
+    }
 
 
     async function sendReview() {
@@ -100,7 +111,6 @@ function Spot({ setHome, input, setInput }) {
         const queryURL = "https://studyspot.onrender.com/building/" + input + "/avail/" + capacity + "/time/" + time + "/day/" + date + "/month/" + month;
 
         if (capacity == 0) return;
-        console.log("WHY")
         const data = await fetch(queryURL, { mode: 'cors' }).then(() => {
             console.log("Updated Capacity Successfully")
             getBuildings();

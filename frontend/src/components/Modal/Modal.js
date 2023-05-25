@@ -48,7 +48,7 @@ export default function Modal({ rating, setRating, setReview }) {
                 }}
               />
               <div className="d-flex flex-row align-item-center mt-4">
-                <Button className="mx-3" variant="light"> Close </Button>
+                <Button className="mx-3" variant="light" onClick={toggleModal}> Close </Button>
                 <Button className="mx-3" variant="light" type="submit"> Submit </Button>
               </div>
             </FormGroup>
