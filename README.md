@@ -1,5 +1,6 @@
 # StudySpot
-## A web application to search for study locations around UBC campus with live crowd-sourced seat availibility, ratings, and reviews.
+
+A web application to search for study locations around UBC campus with live crowd-sourced seat availibility, ratings, and reviews.
  
 
 ## How to run:
